@@ -1,10 +1,10 @@
 Facter.add("memorymodulecount") do
-  confine :operatingsystem => "Fedora"
+  confine :operatingsystem => "CentOS"
 
   setcode do
     `dmidecode -t 16 | grep -i 'number' | sed -r 's/^.+?: //g'`.to_i
   end
-  
+
   memspeeds = []
   memsizes = []
   `dmidecode -t 17 | grep -i speed`.split("\n").each {|i| memspeeds.push(i.gsub(/\s*?[Ss]peed:\s*/,''))}
@@ -13,7 +13,7 @@ end
 
 (0...Facter.value('memorymodulecount').to_i).each do |n|
   Facter.add("memory%d_speed" % n) do
-  confine :operatingsystem => "Fedora"
+  confine :operatingsystem => "CentOS"
 
   setcode do
       memspeeds[n]
@@ -23,7 +23,7 @@ end
 
 (0...Facter.value('memorymodulecount').to_i).each do |n|
   Facter.add("memory%d_size" % n) do
-  confine :operatingsystem => "Fedora"
+  confine :operatingsystem => "CentOS"
 
   setcode do
       memsizes[n]

@@ -4,7 +4,7 @@ class profiles::couchdb {
 
   class { '::couchdb': }
   
-  package { 'hiera-http':
+  package { 'hiera-http-gpg':
     ensure   => 'installed',
     provider => 'gem',
   }

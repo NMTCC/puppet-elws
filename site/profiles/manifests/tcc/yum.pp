@@ -50,18 +50,18 @@ class profiles::tcc::yum {
 		gpgkey => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux',
 	}
 	enabledgpgrepo { 'puppetlabs-products':
-		descr => 'Puppet Labs Products Fedora $releasever - $basearch',
-		baseurl => 'http://yum.puppetlabs.com/fedora/f$releasever/products/$basearch',
+		descr => 'Puppet Labs Products CentOS $releasever - $basearch',
+		baseurl => 'http://yum.puppetlabs.com/el/$releasever/products/$basearch',
 		gpgkey => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs',
 	}
 	enabledgpgrepo { 'puppetlabs-deps':
-		descr => 'Puppet Labs Dependencies Fedora $releasever - $basearch',
-		baseurl => 'http://yum.puppetlabs.com/fedora/f$releasever/dependencies/$basearch',
+		descr => 'Puppet Labs Dependencies CentOS $releasever - $basearch',
+		baseurl => 'http://yum.puppetlabs.com/el/$releasever/dependencies/$basearch',
 		gpgkey => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs',
 	}
 
 
-
+/*
 	enabledgpgrepo { 'tcc-fedora':
 		descr => 'TCC Fedora $releasever - $basearch',
 		baseurl => 'http://replicon.nmt.edu/fedora/linux/releases/$releasever/Everything/$basearch/os/',
@@ -151,7 +151,7 @@ class profiles::tcc::yum {
 	disabledrepo { 'rpmfusion-nonfree-updates-testing': }
 	disabledrepo { 'rpmfusion-nonfree-updates-testing-debuginfo': }
 	disabledrepo { 'rpmfusion-nonfree-updates-testing-source': }
-
+*/
 
 	file { '/etc/pki/rpm-gpg':
 		ensure => 'directory', recurse => 'remote',

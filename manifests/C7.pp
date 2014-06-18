@@ -1,8 +1,8 @@
-node C7 {
+node 'C7' {
 
   include roles::tcc
   include roles::sensu
 
 }
 
-node default inherits C7 { }
+node default inherits 'C7' { }

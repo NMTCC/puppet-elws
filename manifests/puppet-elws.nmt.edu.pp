@@ -1,4 +1,4 @@
-node 'puppet.nmt.edu' {
+node 'puppet-elws.nmt.edu' {
   
   include roles::puppet
   

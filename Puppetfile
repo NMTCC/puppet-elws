@@ -15,12 +15,8 @@ mod "puppetlabs/apt"
 mod "puppetlabs/concat"
 mod "puppetlabs/rsync"
 
-mod 'couchdb',
-  :git => 'https://github.com/camptocamp/puppet-couchdb.git'
-
 mod 'vcsrepo',
   :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo.git'
-
 mod 'sensu',
   :git => 'https://github.com/sensu/sensu-puppet.git'
 mod 'xinetd',

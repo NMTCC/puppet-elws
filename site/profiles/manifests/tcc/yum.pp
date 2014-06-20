@@ -23,13 +23,14 @@ class profiles::tcc::yum {
 		}
 	}
 
-	define enabledgpgrepo ($descr = absent, $baseurl, $gpgkey, $metadata_expire = absent) {
+	define enabledgpgrepo ($descr = absent, $baseurl, $gpgkey, $metadata_expire = absent, $gpgcheck = 1) {
 		gpgrepo { $title :
 			descr => $descr,
 			baseurl => $baseurl,
 			gpgkey => $gpgkey,
 			metadata_expire => $metadata_expire,
 			enabled => 1,
+			gpgcheck => $gpgcheck,
 		}
 	}
 

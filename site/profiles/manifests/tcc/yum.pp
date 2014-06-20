@@ -65,6 +65,7 @@ class profiles::tcc::yum {
 	enabledgpgrepo { 'tcc-centos-development':
 		descr => 'TCC CentOS $releasever - $basearch',
 		baseurl => 'http://replicon.nmt.edu/centos/linux/development/7/x86_64/os/',
+		gpgkey => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centos',
 		metadata_expire => '1d',
 		gpgcheck => 0,
 	}

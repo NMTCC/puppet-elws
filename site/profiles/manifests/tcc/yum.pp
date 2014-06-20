@@ -65,7 +65,7 @@ class profiles::tcc::yum {
 		descr => 'TCC CentOS $releasever - $basearch',
 		baseurl => 'http://replicon.nmt.edu/centos/linux/development/7/x86_64/os/',
 		metadata_expire => '1d',
-		gpgcheck => false,
+		gpgcheck => 0,
 	}
 
 	#disabledrepo { 'tcc-centos-testing': }

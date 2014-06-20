@@ -4,7 +4,7 @@ class profiles::tcc::yum {
 
 	$moduleloc = "puppet:///modules/profiles/${operatingsystem}/yum/${operatingsystemrelease}"
 
-	define gpgrepo ($descr = absent, $baseurl, $gpgkey, $metadata_expire = absent, $enabled = 0) {
+	define gpgrepo ($descr = absent, $baseurl, $gpgkey, $metadata_expire = absent, $enabled = 0, $gpgcheck = 1) {
 		yumrepo { $title :
 			name => $title,
 			descr => $descr,
@@ -12,7 +12,7 @@ class profiles::tcc::yum {
 			gpgkey => $gpgkey,
 			metadata_expire => $metadata_expire,
 			enabled => $enabled,
-			gpgcheck => 1
+			gpgcheck => $gpgcheck
 		}
 	}
 

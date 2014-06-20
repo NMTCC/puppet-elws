@@ -61,14 +61,14 @@ class profiles::tcc::yum {
 	}
 
 	# TCC repos
-	enabledgpgrepo { 'tcc-centos-testing':
+	enabledgpgrepo { 'tcc-centos-development':
 		descr => 'TCC CentOS $releasever - $basearch',
-		baseurl => 'http://replicon.nmt.edu/centos/linux/latest',
+		baseurl => 'http://replicon.nmt.edu/centos/linux/development/7/x86_64/os/',
 		metadata_expire => '1d',
 		gpgcheck => false,
 	}
 
-	disabledrepo { 'tcc-centos-testing': }
+	#disabledrepo { 'tcc-centos-testing': }
 
 	file { '/etc/pki/rpm-gpg':
 		ensure => 'directory', recurse => 'remote',

@@ -117,7 +117,7 @@ def writeGrubConf(grubpart, hash, kernels, path):
 	grubconf.write('fi\n')
 	grubconf.write('set tcctick=""\n')
 	grubconf.write('save_env tcctick\n\n')
-	grubconf.write('menuentry "Fedora Linux x86_64" --class "fedora" --unrestricted --hotkey "l" {\n')
+	grubconf.write('menuentry "CentOS Linux x86_64" --class "centos" --unrestricted --hotkey "l" {\n')
 	grubconf.write('\tinsmod gzio\n')
 	grubconf.write('\tset root="%s"\n' % grubpart)
 	grubconf.write('\techo "Loading Linux kernel %s..."\n' % kernel)

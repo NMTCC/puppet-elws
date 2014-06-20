@@ -170,7 +170,7 @@ def writeUnlockedConf(grubpart, hash, kernels, path):
 	unlockedconf.write('\t\tinsmod gzio\n')
 	unlockedconf.write('\t\tset root="%s"\n' % grubpart)
 	unlockedconf.write('\t\techo "Loading Linux kernel..."\n')
-	unlockedconf.write('\t\tlinux /extlinux/images/vmlinuz ks=http://update.nmt.edu/kickstart/centos/tcc.ks.cfg selinux=0 noshell rhgb quiet\n')
+	unlockedconf.write('\t\tlinux /extlinux/images/vmlinuz ks=http://update.nmt.edu/kickstart/C7/tcc.ks.cfg selinux=0 noshell rhgb quiet\n')
 	unlockedconf.write('\t\techo "Loading initial ramdisk..."\n')
 	unlockedconf.write('\t\tinitrd /extlinux/images/initrd.img\n')
 	unlockedconf.write('\t}\n\n')

@@ -3,7 +3,7 @@
 export SEMESTER="Spring2014"
 export BRANCH="master"
 export BUILD="1"
-export LIBSYNC="http://update.nmt.edu/kickstart/19/libsync.sh"
+export LIBSYNC="http://update.nmt.edu/kickstart/C7/libsync.sh"
 export SYNCPRE="http://replicon.nmt.edu/images"
 export BTHASH="60a68b50f409fe38b72daa2cf4ac4806f18e4448"
 export WINMODE="Normal"

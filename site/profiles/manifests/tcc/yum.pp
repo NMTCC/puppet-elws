@@ -63,9 +63,9 @@ class profiles::tcc::yum {
 	# TCC repos
 	enabledgpgrepo { 'tcc-centos-testing':
 		descr => 'TCC CentOS $releasever - $basearch',
-		baseurl => 'http://replicon.nmt.edu/centos/linux/latest,
+		baseurl => 'http://replicon.nmt.edu/centos/linux/latest',
 		metadata_expire => '1d',
-		gpgkey => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch',
+		gpgcheck => false,
 	}
 
 	disabledrepo { 'tcc-centos-testing': }

@@ -151,6 +151,7 @@ class profiles::tcc::config {
       'kaiba@NMT.EDU',
       'jeanluc@NMT.EDU',
       'floomby@NMT.EDU',
+      'halycon@NMT.EDU',
     ]
   }
 

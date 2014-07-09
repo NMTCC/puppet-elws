@@ -11,6 +11,7 @@ class roles::tcc {
   include profiles::tcc::ldap
   include profiles::tcc::passwd
   include profiles::tcc::remctl
+  include profiles::tcc::rsync::all
 
   include profiles::iris
 

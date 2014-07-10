@@ -17,7 +17,8 @@ class profiles::tcc::files::config inherits profiles::tcc::files {
   file { '/usr/local/share/forge': ensure => 'directory', }
 
   configdir { 'config/profile.d': dest => '/etc', }
-  configdir { 'forge/modules': dest => '/usr/local/share/forge', require => File['/usr/local/share/forge'], }
+  configdir { 'config/grub2/themes': dest => '/boot/grub2'}
+  configdir { 'config/forge/modules': dest => '/usr/local/share/forge', require => File['/usr/local/share/forge'], }
 
   nofile { '/etc/sysconfig/desktop': }
 

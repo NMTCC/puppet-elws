@@ -40,7 +40,7 @@ class profiles::tcc::files {
 
   define configdir ($dest, $recurse = 'remote') {
     file { $title :
-      source  => "${profiles::tcc::config::moduleloc}/${$title}",
+      source  => "${profiles::tcc::files::moduleloc}/${$title}",
       path    => "${dest}/${title}",
       recurse => $recurse,
       ensure  => 'directory',

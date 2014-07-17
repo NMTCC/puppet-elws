@@ -25,10 +25,10 @@ class profiles::tcc::files {
   }
 
   define configscript ($dest, $mode = '0755') {
-    configfile { $title :
-      mode => $mode,
+    file { $title :
+      mode   => $mode,
       source => "${profiles::tcc::files::moduleloc}/script/${$title}",
-      dest => $dest,
+      path   => "${dest}/${title}",
     }
   }
 

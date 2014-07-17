@@ -1,7 +1,7 @@
 # class profiles::tcc::files
 
 class profiles::tcc::files {
-  $moduleloc = "puppet:///modules/profiles/${operatingsystem}/config/${operatingsystemreleaesmajor}"
+  $moduleloc = "puppet:///modules/profiles/${operatingsystem}/config/${operatingsystemreleasemajor}"
   File {
     owner => 'root',
     group => 'root',

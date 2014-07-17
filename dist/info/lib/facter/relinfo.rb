@@ -1,6 +1,6 @@
-Facter.add(:operatingsystemreleaesmajor) do
+Facter.add(:operatingsystemreleasemajor) do
   confine :operatingsystem => "CentOS"
   setcode do
-    Facter.value(:operatingsystemreleaesmajor).gsub(/\.(.*)/,'')
+    Facter.value(:operatingsystemrelease).gsub(/\.(.*)/,'')
   end
 end

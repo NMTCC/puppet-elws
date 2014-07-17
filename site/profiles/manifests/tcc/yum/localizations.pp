@@ -1,5 +1,5 @@
 class profiles::tcc::yum::localizations {
-	case $operatingsystemreleaesmajor {
+	case $operatingsystemreleasemajor {
 	'7': {
 		$packlist = [
 		'hunspell-am',

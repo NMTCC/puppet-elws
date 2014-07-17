@@ -5,7 +5,7 @@ class profiles::tcc::autofs {
 	$dest = "/etc"
 	$scripts = ['fs', 'sf', 'home']
 	
-	$moduleloc = "puppet:///modules/profiles/${operatingsystem}/autofs/${operatingsystemrelease}"
+	$moduleloc = "puppet:///modules/profiles/${operatingsystem}/autofs/${operatingsystemreleaesmajor}"
 
 	File { owner => 'root', group => 'root', }
 	define fsfile ($ext = $title, $mode) {

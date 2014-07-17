@@ -2,7 +2,7 @@
 class profiles::tcc::yum::packages {
 
   case $::operatingsystemreleaesmajor {
-    '19': {
+    '7': {
       $packlist = [
         'a2ps',
         'abiword',

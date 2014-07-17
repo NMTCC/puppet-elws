@@ -19,7 +19,7 @@ class profiles::tcc::files {
   define configfile ($dest, $mode = '0644') {
     file { $title :
       mode   => $mode,
-      source => "${profiles::tcc::files::moduleloc}/${$title}",
+      source => "${profiles::tcc::files::moduleloc}/config/${$title}",
       path   => "${dest}/${title}",
     }
   }
@@ -27,6 +27,7 @@ class profiles::tcc::files {
   define configscript ($dest, $mode = '0755') {
     configfile { $title :
       mode => $mode,
+      source => "${profiles::tcc::files::moduleloc}/script/${$title}",
       dest => $dest,
     }
   }

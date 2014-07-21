@@ -40,9 +40,9 @@ class profiles::tcc::files {
   }
 
   define configdir ($dest, $recurse = 'remote') {
-    $reg_title = $title.match(/[^\/]+$/).string
+    $reg_title = regsubst($title,'^(.*?)([^\/]+$)','\2')
     file { $title :
-      source  => "${profiles::tcc::files::moduleloc}/{$title}",
+      source  => "${profiles::tcc::files::moduleloc}/config/${title}",
       path    => "${dest}/${reg_title}",
       recurse => $recurse,
       ensure  => 'directory',

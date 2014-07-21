@@ -72,10 +72,13 @@ class profiles::tcc::yum {
 	package { 'tcc-epel-development':
 		ensure => present,
 		source => 'http://replicon.nmt.edu/epel/7/x86_64/epel-release-7-0.2.noarch.rpm',
-		provider => rpm,
+		provider => 'rpm',
 	}
 
-	#disabledrepo { 'tcc-centos-testing': }
+	disabledrepo { 'CentOS-Base': }
+	disabledrepo { 'CentOS-Debuginfo': }
+	disabledrepo { 'CentOS-Sources': }
+	disabledrepo { 'CentOS-Vault': }
 
 	file { '/etc/pki/rpm-gpg':
 		ensure => 'directory', recurse => 'remote',

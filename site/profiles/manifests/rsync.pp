@@ -1,9 +1,9 @@
-# class profiles::tcc::rsync
+# class profiles::rsync::all
 
-class profiles::tcc::rsync::all {
-  include profiles::tcc::rsync::comsol
-  include profiles::tcc::rsync::extlinux
-  include profiles::tcc::rsync::maple
-  include profiles::tcc::rsync::matlab
-  include profiles::tcc::rsync::vmd
+class profiles::rsync::all {
+  include profiles::rsync::comsol
+  include profiles::rsync::extlinux
+  include profiles::rsync::maple
+  include profiles::rsync::matlab
+  include profiles::rsync::vmd
 }

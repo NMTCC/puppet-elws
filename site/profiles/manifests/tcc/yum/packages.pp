@@ -1,8 +1,8 @@
 # Defines the TCC package lists
 class profiles::tcc::yum::packages {
 
-  case $::operatingsystemrelease {
-    '19': {
+  case $::operatingsystemreleasemajor {
+    '7': {
       $packlist = [
         'a2ps',
         'abiword',

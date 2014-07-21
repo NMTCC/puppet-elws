@@ -2,16 +2,6 @@
 
 class profiles::sensu::plugins {
 
-  class { 'sensu':
-    rabbitmq_port            => 5671,
-    rabbitmq_password        => hiera(dbpasswd),
-    rabbitmq_host            => 'mqhost.nmt.edu',
-    subscriptions            => ['fedora',],
-    repo_source              => 'http://repos.sensuapp.org/yum/el/6/$basearch/',
-    rabbitmq_ssl_private_key => 'puppet:///files/sensu/ssl/key.pem',
-    rabbitmq_ssl_cert_chain  => 'puppet:///files/sensu/ssl/cert.pem',
-  }  
-
 # Delete the current vcsrepos if they're in detached head state
   exec { 'rm-sensu-community-plugins':
     command => '/usr/bin/rm -rf /etc/sensu/plugins/sensu-community-plugins/',

@@ -1,7 +1,7 @@
 # class profiles::tcc::files
 
 class profiles::tcc::files {
-  $moduleloc = "puppet:///modules/profiles/${operatingsystem}/config/${operatingsystemrelease}"
+  $moduleloc = "puppet:///modules/profiles/${operatingsystem}/config/${operatingsystemreleasemajor}"
   File {
     owner => 'root',
     group => 'root',
@@ -19,15 +19,16 @@ class profiles::tcc::files {
   define configfile ($dest, $mode = '0644') {
     file { $title :
       mode   => $mode,
-      source => "${profiles::tcc::files::moduleloc}/${$title}",
+      source => "${profiles::tcc::files::moduleloc}/config/${$title}",
       path   => "${dest}/${title}",
     }
   }
 
   define configscript ($dest, $mode = '0755') {
-    configfile { $title :
-      mode => $mode,
-      dest => $dest,
+    file { $title :
+      mode   => $mode,
+      source => "${profiles::tcc::files::moduleloc}/script/${$title}",
+      path   => "${dest}/${title}",
     }
   }
 
@@ -39,9 +40,10 @@ class profiles::tcc::files {
   }
 
   define configdir ($dest, $recurse = 'remote') {
+    $reg_title = regsubst($title,'^(.*?)([^\/]+$)','\2')
     file { $title :
-      source  => "${profiles::tcc::config::moduleloc}/${$title}",
-      path    => "${dest}/${title}",
+      source  => "${profiles::tcc::files::moduleloc}/config/${title}",
+      path    => "${dest}/${reg_title}",
       recurse => $recurse,
       ensure  => 'directory',
       links   => 'manage',

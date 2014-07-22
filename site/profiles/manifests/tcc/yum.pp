@@ -69,7 +69,7 @@ class profiles::tcc::yum {
 		metadata_expire => '1d',
 		gpgcheck => 0,
 	}
-	package { 'tcc-epel-development':
+	package { 'epel-release':
 		ensure => present,
 		source => 'http://replicon.nmt.edu/epel/7/x86_64/epel-release-7-0.2.noarch.rpm',
 		provider => 'rpm',

@@ -156,7 +156,7 @@ def writeUnlockedConf(grubpart, hash, kernels, path):
 	unlockedconf.write('insmod ntfs\n')
 	unlockedconf.write('insmod part_gpt\n')
 	unlockedconf.write('insmod part_msdos\n\n')
-	unlockedconf.write('submenu "Fedora options" --hotkey "l" {\n\n')
+	unlockedconf.write('submenu "CentOS options" --hotkey "l" {\n\n')
 	for kernel in kernels:
 		unlockedconf.write('\tmenuentry "CentOS Linux (%s)" {\n' % kernel)
 		unlockedconf.write('\t\tinsmod gzio\n')

@@ -13,6 +13,7 @@ class roles::tcc {
   include profiles::tcc::passwd
   include profiles::tcc::remctl
   include profiles::rsync::all
+  include profiles::puppetagent
 
   include profiles::iris
 

@@ -36,7 +36,7 @@ class profiles::tcc::files::config inherits profiles::tcc::files {
   configfile { 'smartd.conf': dest => '/etc/smartmontools', }
   configfile { '65-iscan.rules': dest => '/lib/udev/rules.d', }
   configfile { 'apcupsd.conf': dest => '/etc/apcupsd', }
-  configfile { 'extlinux.conf': dest => '', mode => '0640', }
+  configfile { 'extlinux.conf': dest => '/extlinux', mode => '0640', }
 
   k5login { '/root/.k5login':
     ensure     => 'present',

@@ -38,6 +38,8 @@ class profiles::tcc::files::script inherits profiles::tcc::files {
 
   service { 'cups': ensure => 'running', enable => 'true', require => Configfile['client.conf'] }
   service { 'puppet': ensure => 'running', enable => 'true', }
+  service { 'lightdm': ensure => 'running', enable => 'true', }
+  service { 'nfs': ensure => 'running', enable => 'true', }
   # service { 'transmission-daemon': ensure => 'running', enable => 'true', require => Nofile['/var/lib/transmission/Downloads/Fall2013'], }
 
   # wget::fetch { 'http://sync.nmt.edu/Spring2014.torrent': destination => '/tmp/Spring2014.torrent', } ->

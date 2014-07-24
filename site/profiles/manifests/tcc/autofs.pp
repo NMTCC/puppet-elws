@@ -22,6 +22,9 @@ class profiles::tcc::autofs {
 	define rootdir ($dir = $title) { file { "/${dir}" : ensure => 'directory', mode => '0755', } }
 	rootdir { $scripts : }
 
-	service { 'autofs': require => [ Fsfile[$scripts], Fsfile['master'], Rootdir[$scripts] ], }
+	service { 'autofs':
+		ensure=> 'enabled',
+		require => [ Fsfile[$scripts], Fsfile['master'], Rootdir[$scripts] ],
+		}
 
 }

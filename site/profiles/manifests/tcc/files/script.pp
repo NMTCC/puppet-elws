@@ -6,7 +6,6 @@ class profiles::tcc::files::script inherits profiles::tcc::files {
   ln { '/usr/local/bin/perl': target => '/usr/bin/perl', }
   ln { '/usr/local/bin/python': target => '/usr/bin/python', }
   ln { '/usr/share/backgrounds/default.png': target => '/usr/share/backgrounds/khansub.png', require => Configfile['khansub.png'], }
-  ln { '/usr/share/gnome-shell/theme/noise-texture.png': target => '/usr/share/backgrounds/khansub.png', require => Configfile['khansub.png'], }
   ln { '/usr/local/bin/grub2': target => '/usr/local/share/forge/modules/grub2', require => Configdir['forge/modules'], }
   ln { '/usr/share/xsessions/default.desktop': target => '/usr/share/xsessions/cinnamon.desktop', }
   
@@ -28,7 +27,7 @@ class profiles::tcc::files::script inherits profiles::tcc::files {
   configscript { 'jpgmpg': dest => '/usr/local/bin', }
   configscript { 'make_bootusb': dest => '/usr/local/bin', }
   configscript { 'tcc-dracut': dest => '/usr/local/bin', }
-  configscript { 'PostLogout': dest => '/etc/lxdm', }
+  configscript { 'PostLogout': dest => '/etc/lightdm', }
   configscript { 'sfdisk2parted': dest => '/usr/local/bin', }
   configscript { 'killpower': dest => '/etc/apcupsd', }
   configscript { 'reseed': dest => '/usr/local/bin', }

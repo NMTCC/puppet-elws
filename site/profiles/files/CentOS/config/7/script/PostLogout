@@ -7,9 +7,9 @@
 /usr/bin/pax11publish -r
 
 # Reset LXDM session settings
-/usr/bin/sed -i -e 's/last_session=.*/last_session=/' /var/lib/lxdm/lxdm.conf
-/usr/bin/sed -i -e 's/last_lang=.*/last_lang=/' /var/lib/lxdm/lxdm.conf
-/usr/bin/sed -i -e 's/last_langs=.*/last_langs=/' /var/lib/lxdm/lxdm.conf
+#/usr/bin/sed -i -e 's/last_session=.*/last_session=/' /var/lib/lxdm/lxdm.conf
+#/usr/bin/sed -i -e 's/last_lang=.*/last_lang=/' /var/lib/lxdm/lxdm.conf
+#/usr/bin/sed -i -e 's/last_langs=.*/last_langs=/' /var/lib/lxdm/lxdm.conf
 
 # Restart LXDM
-/usr/bin/systemctl restart lxdm.service
+#/usr/bin/systemctl restart lxdm.service

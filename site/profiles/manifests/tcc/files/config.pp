@@ -20,6 +20,9 @@ class profiles::tcc::files::config inherits profiles::tcc::files {
   configdir { 'grub2/themes': dest => '/boot/grub2'}
   configdir { 'forge/modules': dest => '/usr/local/share/forge', require => File['/usr/local/share/forge'], }
 
+  ln { '/usr/share/backgrounds/default.png': target => '/usr/share/backgrounds/khansub.png', require => Configfile['khansub.png'], }
+  ln { '/usr/share/xsessions/default.desktop': target => '/usr/share/xsessions/cinnamon.desktop', }
+
   nofile { '/etc/sysconfig/desktop': }
 
   configfile { 'clock': dest => '/etc/sysconfig', }

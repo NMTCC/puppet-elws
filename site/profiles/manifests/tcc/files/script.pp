@@ -5,9 +5,7 @@ class profiles::tcc::files::script inherits profiles::tcc::files {
   ln { '/usr/local/bin/pine': target => '/usr/bin/alpine', }
   ln { '/usr/local/bin/perl': target => '/usr/bin/perl', }
   ln { '/usr/local/bin/python': target => '/usr/bin/python', }
-  ln { '/usr/share/backgrounds/default.png': target => '/usr/share/backgrounds/khansub.png', require => Configfile['khansub.png'], }
   ln { '/usr/local/bin/grub2': target => '/usr/local/share/forge/modules/grub2', require => Configdir['forge/modules'], }
-  ln { '/usr/share/xsessions/default.desktop': target => '/usr/share/xsessions/cinnamon.desktop', }
   
   configscript { 'winreboot': dest => '/etc/rc.d/init.d', }
   configscript { 'peripheral_check': dest => '/etc/cron.daily', }

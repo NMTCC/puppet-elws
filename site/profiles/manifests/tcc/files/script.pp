@@ -6,6 +6,7 @@ class profiles::tcc::files::script inherits profiles::tcc::files {
   ln { '/usr/local/bin/perl': target => '/usr/bin/perl', }
   ln { '/usr/local/bin/python': target => '/usr/bin/python', }
   ln { '/usr/share/backgrounds/default.png': target => '/usr/share/backgrounds/khansub.png', require => Configfile['khansub.png'], }
+  ln { '/usr/share/gnome-shell/theme/noise-texture.png': target => '/usr/share/backgrounds/khansub.png', require => Configfile['khansub.png'], }
   ln { '/usr/local/bin/grub2': target => '/usr/local/share/forge/modules/grub2', require => Configdir['forge/modules'], }
   ln { '/usr/share/xsessions/default.desktop': target => '/usr/share/xsessions/cinnamon.desktop', }
   
@@ -34,7 +35,7 @@ class profiles::tcc::files::script inherits profiles::tcc::files {
 
   # The 'service' type can't pass --force to the systemctl; this has to be done by exec, then.  Yuck.
   # service { 'lxdm': ensure => 'running', enable => 'true', require => Configfile['lxdm.conf'] }
-  profiles::tcc::execlnwrong { 'lxdm-enable': command => '/bin/systemctl enable lxdm.service --force', ln => '/etc/systemd/system/display-manager.service', target => '/usr/lib/systemd/system/lxdm.service', require => Configfile['lxdm.conf'] }
+  # profiles::tcc::execlnwrong { 'lxdm-enable': command => '/bin/systemctl enable lxdm.service --force', ln => '/etc/systemd/system/display-manager.service', target => '/usr/lib/systemd/system/lxdm.service', require => Configfile['lxdm.conf'] }
 
   service { 'cups': ensure => 'running', enable => 'true', require => Configfile['client.conf'] }
   service { 'puppet': ensure => 'running', enable => 'true', }

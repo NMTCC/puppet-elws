@@ -24,6 +24,7 @@ class profiles::tcc::files::config inherits profiles::tcc::files {
 
   configfile { 'clock': dest => '/etc/sysconfig', }
   configfile { 'lxdm.conf': dest => '/etc/lxdm', }
+  configfile { 'custom.conf': dest => '/etc/gdm', }
   configfile { '00-keyboard.conf': dest => '/etc/X11/xorg.conf.d', }
   configfile { 'tcc-reboot': dest => '/etc/cron.d', }
   configfile { 'forge.cron': dest => '/etc/cron.d', }

@@ -23,7 +23,7 @@ class profiles::tcc::autofs {
 	rootdir { $scripts : }
 
 	service { 'autofs':
-		ensure=> 'enabled',
+		ensure=> 'running',
 		require => [ Fsfile[$scripts], Fsfile['master'], Rootdir[$scripts] ],
 		}
 

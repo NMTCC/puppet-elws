@@ -2,7 +2,6 @@
 class profiles::tcc::yum::packages {
 
   case $::operatingsystemreleasemajor {
-    case $::operatingsystemrelease {
     '7': {
       $packlist = [
         'a2ps',

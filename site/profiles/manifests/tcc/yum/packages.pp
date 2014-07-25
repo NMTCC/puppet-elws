@@ -201,7 +201,6 @@ class profiles::tcc::yum::packages {
         'nss-util-debuginfo',
         'ntp',
         'octave-signal',
-        'openldap-clients',
         'oracle-instantclient12.1-precomp',
         'oracle-instantclient12.1-sqlplus',
         'pam-debuginfo',

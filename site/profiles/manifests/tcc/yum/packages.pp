@@ -334,6 +334,6 @@ class profiles::tcc::yum::packages {
     }
   }
   Package { ensure => 'installed', require => Exec['yum-makecache'], }
-  package { $packlist : ensure => 'installed', provider => 'yum', }
+  package { $packlist : ensure => 'latest', provider => 'yum', }
   package { $removelist : ensure => 'absent', provider => 'yum', }
 }

@@ -62,9 +62,16 @@ class profiles::tcc::yum {
 	}
 
 	# TCC repos
-	enabledgpgrepo { 'tcc-centos-development':
+	enabledgpgrepo { 'tcc-centos':
 		descr => 'TCC CentOS $releasever - $basearch',
-		baseurl => 'http://replicon.nmt.edu/centos/linux/development/7/x86_64/os/',
+		baseurl => 'http://replicon.nmt.edu/centos/7/os/x86_64/Packages/',
+		gpgkey => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7',
+		metadata_expire => '1d',
+		gpgcheck => 0,
+	}
+	enabledgpgrepo { 'tcc-centos-debug':
+		descr => 'TCC CentOS Debug $releasever - $basearch',
+		baseurl => 'http://replicon.nmt.edu/centos-debuginfo/7/x86_64/',
 		gpgkey => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7',
 		metadata_expire => '1d',
 		gpgcheck => 0,
@@ -72,6 +79,11 @@ class profiles::tcc::yum {
 	package { 'epel-release':
 		ensure => present,
 		source => 'http://replicon.nmt.edu/epel/7/x86_64/epel-release-7-0.2.noarch.rpm',
+		provider => 'rpm',
+	}
+	package { 'rpmforge':
+		ensure => present,
+		source => 'http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm',
 		provider => 'rpm',
 	}
 
